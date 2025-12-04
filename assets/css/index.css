@@ -61,7 +61,7 @@ a:hover {
 }
 .hero-section {
     min-height: 100vh; 
-    
+    position: absolute;
     /* Usamos Flexbox para centrar el contenido */
     display: flex;
     flex-direction: column;

@@ -60,18 +60,15 @@ a:hover {
     background-color: #0056b3;
 }
 .hero-section {
-    min-height: 100vh; 
-    
-    /* Usamos Flexbox para centrar el contenido */
+    min-height: 100vh;
+    margin-top: -24px;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
-    
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: var(--color-light-grey); /* Usamos el gris claro para alto contraste */
-    color: var(--color-text);
-    padding: 2rem;
+
+    /* ⭐ FONDO VISIBLE que el OVERLAY va a desenfocar ⭐ */
+    background: url('../../assets/images/flower.jpg'); 
 }
 
 .hero-section h1 {
@@ -87,7 +84,40 @@ a:hover {
     opacity: 0.7;
     margin-bottom: 4rem; /* Espacio antes del scroll link si está en la misma columna */
 }
+.glass-overlay {
+    /* Ocupa el 100% del espacio del padre (.hero-section) */
+    width: 100%;
+    min-height: 100vh; 
+    
+    /* 1. Transparencia y el filtro clave */
+    background: rgba(255, 255, 255, 0.15); /* Mucho más sutil */
+    backdrop-filter: blur(5px); /* Un desenfoque más fuerte */
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* 2. Centrado y estructura interna */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* 3. Borde (opcional, para definir el 'cristal') */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    
+    padding: 2rem; /* Añadimos padding para el contenido */
+    color: white; /* Texto blanco sobre fondo de cristal */
+}
 
+/* Ajustamos el hero-content para que no choque con el scroll link */
+.hero-content {
+    margin-bottom: 50px; /* Separación del título y el scroll down */
+}
+
+/* Estilos de Texto dentro del overlay */
+.glass-overlay h1, .glass-overlay .subtitle {
+    color: white; /* Aseguramos que el texto sea visible */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
 /* Scroll Down Link */
 .scroll-down-link {
     position: absolute;
@@ -116,19 +146,6 @@ a:hover {
     60% { transform: translateY(-3px); }
 }
 
-.skip-link {
-    position: absolute;
-    top: -40px; 
-    left: 0;
-    background: var(--color-text);
-    color: var(--color-background);
-    padding: 8px;
-    z-index: 1000;
-}
-
-.skip-link:focus {
-    top: 0;
-}
 
 /* Espaciado general del cuerpo de la web */
 main {
@@ -211,6 +228,52 @@ h2 {
     text-align: right;
 }
 
+.main-nav {
+    /* Fija la barra en la parte superior */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    
+    /* Fondo transparente con un sutil desenfoque (Glassmorphism sutil) */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    padding: 1rem 0;
+}
+
+.nav-content {
+    display: flex;
+    /* ⭐ Alineación Clave: Centra el menú en el contenedor ⭐ */
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white; /* Color del texto del logo */
+}
+
+.nav-links {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex;
+    gap: 2rem; /* Espacio entre enlaces */
+}
+
+.nav-links a {
+    color: white; /* Color del texto de los enlaces */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #a8c0ff; /* Color al pasar el ratón */
+}
 
 /* FOOTER */
 footer {

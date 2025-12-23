@@ -1,11 +1,11 @@
 :root {
-    --color-primary: #007bff; /* Azul (para enlaces/botones) */
-    --color-text: #1a1a1a;   /* Texto oscuro */
-    --color-background: #ffffff; /* Fondo claro */
-    --color-light-grey: #f0f0f0; /* Gris claro para fondos secundarios */
+    --color-primary: #007bff; 
+    --color-text: #1a1a1a;   
+    --color-background: #ffffff;
+    --color-light-grey: #f0f0f0; 
 }
 
-/* Reset de estilos básicos */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,26 +13,24 @@
 }
 
 html {
-    /* Desplazamiento suave para el scroll-down link */
+    
     scroll-behavior: smooth;
 }
 
 body {
-    /* Pila de fuentes moderna y limpia (San-serif) */
+   
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-background);
 }
 
-/* Contenedor: Máximo de 1200px con buen padding lateral */
 .container {
     max-width: 1200px; 
-    margin: 0 auto; /* Centra el contenedor */
-    padding: 0 1.5rem; /* Padding lateral responsivo */
+    margin: 0 auto; 
+    padding: 0 1.5rem; 
 }
 
-/* Estilos de Enlaces */
 a {
     color: var(--color-text);
     text-decoration: none;
@@ -43,7 +41,6 @@ a:hover {
     color: var(--color-primary);
 }
 
-/* Botones */
 .button {
     display: inline-block;
     padding: 12px 25px;
@@ -62,33 +59,32 @@ a:hover {
 .hero-section {
     min-height: 100vh; 
     position: absolute;
-    /* Usamos Flexbox para centrar el contenido */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
+    justify-content: center; 
+    align-items: center; 
     
     text-align: center;
-    background-color: var(--color-light-grey); /* Usamos el gris claro para alto contraste */
+    background-color: var(--color-light-grey); 
     color: var(--color-text);
     padding: 2rem;
 }
 
 .hero-section h1 {
-    /* Tipografía fluida (opcional, pero moderno) */
+   
     font-size: clamp(3rem, 10vw, 6rem); 
     line-height: 1.1;
     margin-bottom: 0.5rem;
-    font-weight: 900; /* Negrita muy fuerte */
+    font-weight: 900; 
 }
 
 .hero-section .subtitle {
     font-size: clamp(1rem, 3vw, 1.5rem);
     opacity: 0.7;
-    margin-bottom: 4rem; /* Espacio antes del scroll link si está en la misma columna */
+    margin-bottom: 4rem; 
 }
 
-/* Scroll Down Link */
+
 .scroll-down-link {
     position: absolute;
     bottom: 3rem;
@@ -106,7 +102,7 @@ a:hover {
     display: block;
     margin-top: 5px;
     font-size: 1rem;
-    /* Animación de rebote sutil */
+  
     animation: bounce 2s infinite; 
 }
 
@@ -130,7 +126,7 @@ a:hover {
     top: 0;
 }
 
-/* Espaciado general del cuerpo de la web */
+
 main {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -153,18 +149,18 @@ h2 {
     text-align: center;
 }
 
-/* Estilo para cada Obra (Grid) */
+
 .portfolio-item {
     display: grid;
-    /* Dos columnas: 40% para la imagen, 60% para la descripción */
+    
     grid-template-columns: 2fr 3fr; 
-    gap: 60px; /* Mayor espacio entre elementos */
+    gap: 60px; 
     margin-bottom: 8rem;
     align-items: center; 
 }
 
 .portfolio-item figure {
-    /* Estilo sutil de borde para darle profundidad */
+    
     border: 1px solid var(--color-light-grey);
     padding: 0;
     margin: 0;
@@ -179,7 +175,6 @@ h2 {
     transition: transform 0.5s ease;
 }
 
-/* Efecto hover moderno en la imagen */
 .portfolio-item img:hover {
     transform: scale(1.05);
 }
@@ -197,7 +192,6 @@ h2 {
     margin-bottom: 0.8rem;
 }
 
-/* Inversión del layout */
 .portfolio-item.reverse-layout {
     grid-template-areas: "desc image";
 }
@@ -212,7 +206,6 @@ h2 {
 }
 
 
-/* FOOTER */
 footer {
     padding: 2rem 0;
     text-align: center;
@@ -222,9 +215,7 @@ footer {
 }
 
 
-/* RESPONSIVE (Mismo punto de quiebre) */
 @media (max-width: 768px) {
-    /* Apila todos los elementos de portafolio */
     .portfolio-item {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -239,8 +230,63 @@ footer {
         text-align: left;
     }
     
-    /* Asegura que el contenedor tenga suficiente espacio en móvil */
     .container {
         padding: 0 1rem;
     }
+
+
+    .portfolio-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap; /* Para que se ajuste en móviles */
+}
+
+.portfolio-card {
+  text-decoration: none; /* Quita el subrayado del link */
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 250px; /* Ajusta según necesites */
+  height: 450px;
+  overflow: hidden;
+  /* El secreto: radios superiores al 50% del ancho o fijos muy altos */
+  border-radius: 125px 125px 0 0; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la imagen se estire */
+  transition: filter 0.3s ease;
+}
+
+/* Etiqueta de texto (el botón ovalado de abajo) */
+.card-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Efectos al pasar el ratón */
+.portfolio-card:hover {
+  transform: translateY(-10px); /* Sube un poco la tarjeta */
+}
+
+.portfolio-card:hover img {
+  filter: brightness(0.8); /* Oscurece un poco la imagen */
+}
 }

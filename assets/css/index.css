@@ -1,10 +1,9 @@
 :root {
-    --color-primary: #007bff; 
+    --color-primary: #422d21;
     --color-text: #1a1a1a;   
-    --color-background: #ffffff;
-    --color-light-grey: #f0f0f0; 
+    --color-background: #fff6e7; 
+    --color-light-grey: #422d21;
 }
-
 
 * {
     box-sizing: border-box;
@@ -13,17 +12,18 @@
 }
 
 html {
-    
+   
     scroll-behavior: smooth;
 }
 
 body {
-   
+ 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.6;
-    color: var(--color-text);
+    color: #614333;
     background-color: var(--color-background);
 }
+
 
 .container {
     max-width: 1200px; 
@@ -32,13 +32,13 @@ body {
 }
 
 a {
-    color: var(--color-text);
+    color:#dac8a8;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-primary);
+    color: var(--color-background);
 }
 
 .button {
@@ -46,36 +46,34 @@ a:hover {
     padding: 12px 25px;
     margin-top: 15px;
     background-color: var(--color-primary);
-    color: white !important;
+    color: #a7785f !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-radius: 4px;
+    border-radius: 25px;
     transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #dac8a8;
+
 }
 .hero-section {
-    min-height: 100vh; 
-    position: absolute;
+    min-height: 105vh;
+    margin-top: -24px;
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: var(--color-light-grey); 
-    color: var(--color-text);
-    padding: 2rem;
+
+    background: url('../../assets/images/flower.jpg'); 
 }
 
 .hero-section h1 {
-   
     font-size: clamp(3rem, 10vw, 6rem); 
     line-height: 1.1;
     margin-bottom: 0.5rem;
-    font-weight: 900; 
+    font-weight: 900;
+    color: #fff6e7;
 }
 
 .hero-section .subtitle {
@@ -83,8 +81,34 @@ a:hover {
     opacity: 0.7;
     margin-bottom: 4rem; 
 }
+.glass-overlay {
+    width: 100%;
+    min-height: 105vh; 
+    
+    background: rgba(255, 237, 212, 0.101); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(15px);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    
+    padding: 2rem; 
+    color: white; 
+}
 
+.hero-content {
+    margin-bottom: 50px; 
+}
+
+.glass-overlay h1, .glass-overlay .subtitle {
+    color: #fff6e7;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}
 .scroll-down-link {
     position: absolute;
     bottom: 3rem;
@@ -102,7 +126,6 @@ a:hover {
     display: block;
     margin-top: 5px;
     font-size: 1rem;
-  
     animation: bounce 2s infinite; 
 }
 
@@ -110,6 +133,31 @@ a:hover {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-5px); }
     60% { transform: translateY(-3px); }
+}
+
+
+main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+h2 {
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    padding-top: 1rem;
+    font-weight: 700;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .skip-link {
@@ -126,94 +174,91 @@ a:hover {
     top: 0;
 }
 
-
-main {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+.main-nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffecd265; 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 1rem 0;
 }
 
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    padding-top: 1rem;
+.nav-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
     font-weight: 700;
+    color: #6b4632; 
 }
 
-.intro-text {
-    font-size: 1.1rem;
-    margin-bottom: 4rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+.nav-links {
+    list-style: none; 
+    display: flex;
+    gap: 2rem; 
 }
 
-
-.portfolio-item {
-    display: grid;
-    
-    grid-template-columns: 2fr 3fr; 
-    gap: 60px; 
-    margin-bottom: 8rem;
-    align-items: center; 
+.nav-links a {
+    color: #6b4632; 
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
 
-.portfolio-item figure {
-    
-    border: 1px solid var(--color-light-grey);
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 8px;
+.nav-links a:hover {
+    color: #dac8a8; 
 }
 
-.portfolio-item img {
+.footer-wave {
+    line-height: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.footer-wave svg {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    transition: transform 0.5s ease;
+    margin-bottom: -1px; 
 }
 
-.portfolio-item img:hover {
-    transform: scale(1.05);
+.main-footer {
+    background-color: #1a1a1a;
+    color: #dac8a8;
+    padding: 100px 0 40px 0; 
+    
+    width: 100%;
+    text-align: right; 
+    position: relative;
 }
 
-.portfolio-item figcaption {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    padding: 10px;
-    background-color: var(--color-light-grey);
-    text-align: center;
+.footer-text-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px; 
 }
 
-.item-description h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+.footer-text-container a {
+    font-size: 0.8rem;
+    margin-right: 15px;
+    text-decoration: none;
 }
 
-.portfolio-item.reverse-layout {
-    grid-template-areas: "desc image";
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-.portfolio-item.reverse-layout figure {
-    grid-area: image;
-}
-
-.portfolio-item.reverse-layout .item-description {
-    grid-area: desc;
-    text-align: right;
-}
-
-
-footer {
-    padding: 2rem 0;
-    text-align: center;
-    background-color: var(--color-light-grey);
-    font-size: 0.9rem;
-    border-top: 1px solid #ddd;
-}
-
 
 @media (max-width: 768px) {
     .portfolio-item {
@@ -233,60 +278,4 @@ footer {
     .container {
         padding: 0 1rem;
     }
-
-
-    .portfolio-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
-  flex-wrap: wrap; /* Para que se ajuste en móviles */
-}
-
-.portfolio-card {
-  text-decoration: none; /* Quita el subrayado del link */
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 250px; /* Ajusta según necesites */
-  height: 450px;
-  overflow: hidden;
-  /* El secreto: radios superiores al 50% del ancho o fijos muy altos */
-  border-radius: 125px 125px 0 0; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Evita que la imagen se estire */
-  transition: filter 0.3s ease;
-}
-
-/* Etiqueta de texto (el botón ovalado de abajo) */
-.card-label {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.5);
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-/* Efectos al pasar el ratón */
-.portfolio-card:hover {
-  transform: translateY(-10px); /* Sube un poco la tarjeta */
-}
-
-.portfolio-card:hover img {
-  filter: brightness(0.8); /* Oscurece un poco la imagen */
-}
 }

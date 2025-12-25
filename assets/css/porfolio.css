@@ -1,187 +1,12 @@
-:root {
-    --color-primary: #007bff; /* Azul (para enlaces/botones) */
-    --color-text: #1a1a1a;   /* Texto oscuro */
-    --color-background: #ffffff; /* Fondo claro */
-    --color-light-grey: #f0f0f0; /* Gris claro para fondos secundarios */
-}
-
-/* Reset de estilos básicos */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    /* Desplazamiento suave para el scroll-down link */
-    scroll-behavior: smooth;
-}
-
-body {
-    /* Pila de fuentes moderna y limpia (San-serif) */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-background);
-}
-
-/* Contenedor: Máximo de 1200px con buen padding lateral */
-.container {
-    max-width: 1200px; 
-    margin: 0 auto; /* Centra el contenedor */
-    padding: 0 1.5rem; /* Padding lateral responsivo */
-}
-
-/* Estilos de Enlaces */
-a {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--color-primary);
-}
-
-/* Botones */
-.button {
-    display: inline-block;
-    padding: 12px 25px;
-    margin-top: 15px;
-    background-color: var(--color-primary);
-    color: white !important;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-.hero-section {
-    min-height: 100vh;
-    margin-top: -24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    /* ⭐ FONDO VISIBLE que el OVERLAY va a desenfocar ⭐ */
-    background: url('../../assets/images/flower.jpg'); 
-}
-
-.hero-section h1 {
-    /* Tipografía fluida (opcional, pero moderno) */
-    font-size: clamp(3rem, 10vw, 6rem); 
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    font-weight: 900; /* Negrita muy fuerte */
-}
-
-.hero-section .subtitle {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    opacity: 0.7;
-    margin-bottom: 4rem; /* Espacio antes del scroll link si está en la misma columna */
-}
-.glass-overlay {
-    /* Ocupa el 100% del espacio del padre (.hero-section) */
-    width: 100%;
-    min-height: 100vh; 
-    
-    /* 1. Transparencia y el filtro clave */
-    background: rgba(255, 255, 255, 0.15); /* Mucho más sutil */
-    backdrop-filter: blur(5px); /* Un desenfoque más fuerte */
-    -webkit-backdrop-filter: blur(15px);
-    
-    /* 2. Centrado y estructura interna */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    /* 3. Borde (opcional, para definir el 'cristal') */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
-    
-    padding: 2rem; /* Añadimos padding para el contenido */
-    color: white; /* Texto blanco sobre fondo de cristal */
-}
-
-/* Ajustamos el hero-content para que no choque con el scroll link */
-.hero-content {
-    margin-bottom: 50px; /* Separación del título y el scroll down */
-}
-
-/* Estilos de Texto dentro del overlay */
-.glass-overlay h1, .glass-overlay .subtitle {
-    color: white; /* Aseguramos que el texto sea visible */
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
-}
-/* Scroll Down Link */
-.scroll-down-link {
-    position: absolute;
-    bottom: 3rem;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-    opacity: 0.6;
-}
-
-.scroll-down-link:hover {
-    opacity: 1;
-}
-
-.scroll-indicator {
-    display: block;
-    margin-top: 5px;
-    font-size: 1rem;
-    /* Animación de rebote sutil */
-    animation: bounce 2s infinite; 
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-5px); }
-    60% { transform: translateY(-3px); }
-}
-
-
-/* Espaciado general del cuerpo de la web */
-main {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    padding-top: 1rem;
-    font-weight: 700;
-}
-
-.intro-text {
-    font-size: 1.1rem;
-    margin-bottom: 4rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-/* Estilo para cada Obra (Grid) */
 .portfolio-item {
     display: grid;
-    /* Dos columnas: 40% para la imagen, 60% para la descripción */
     grid-template-columns: 2fr 3fr; 
-    gap: 60px; /* Mayor espacio entre elementos */
+    gap: 60px;
     margin-bottom: 8rem;
     align-items: center; 
 }
 
 .portfolio-item figure {
-    /* Estilo sutil de borde para darle profundidad */
     border: 1px solid var(--color-light-grey);
     padding: 0;
     margin: 0;
@@ -196,7 +21,6 @@ h2 {
     transition: transform 0.5s ease;
 }
 
-/* Efecto hover moderno en la imagen */
 .portfolio-item img:hover {
     transform: scale(1.05);
 }
@@ -214,7 +38,6 @@ h2 {
     margin-bottom: 0.8rem;
 }
 
-/* Inversión del layout */
 .portfolio-item.reverse-layout {
     grid-template-areas: "desc image";
 }
@@ -228,82 +51,83 @@ h2 {
     text-align: right;
 }
 
-.main-nav {
-    /* Fija la barra en la parte superior */
-    position: fixed; 
-    top: 0;
-    left: 0;
+.portfolio-section {
+    padding-top: 20px; 
+    padding-bottom: 100px;
+}
+.portfolio-grid {
+    display: flex !important;
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important;  
+    justify-content: center !important; 
+    align-items: flex-end; 
+    gap: 90px; 
     width: 100%;
-    z-index: 1000; /* Asegura que esté por encima de todo */
-    
-    /* Fondo transparente con un sutil desenfoque (Glassmorphism sutil) */
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    
-    padding: 1rem 0;
-}
-
-.nav-content {
-    display: flex;
-    /* ⭐ Alineación Clave: Centra el menú en el contenedor ⭐ */
-    justify-content: space-between; 
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white; /* Color del texto del logo */
-}
-
-.nav-links {
-    list-style: none; /* Quita los puntos de la lista */
-    display: flex;
-    gap: 2rem; /* Espacio entre enlaces */
-}
-
-.nav-links a {
-    color: white; /* Color del texto de los enlaces */
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #a8c0ff; /* Color al pasar el ratón */
-}
-
-/* FOOTER */
-footer {
-    padding: 2rem 0;
-    text-align: center;
-    background-color: var(--color-light-grey);
-    font-size: 0.9rem;
-    border-top: 1px solid #ddd;
+    margin: 0 auto !important;
+    padding: 50px 0;
+    padding-top: 0px;
+    overflow-x: auto; 
 }
 
 
-/* RESPONSIVE (Mismo punto de quiebre) */
-@media (max-width: 768px) {
-    /* Apila todos los elementos de portafolio */
-    .portfolio-item {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-bottom: 4rem;
-    }
-    
-    .portfolio-item.reverse-layout {
-        grid-template-areas: none;
-    }
-    
-    .portfolio-item.reverse-layout .item-description {
-        text-align: left;
-    }
-    
-    /* Asegura que el contenedor tenga suficiente espacio en móvil */
-    .container {
-        padding: 0 1rem;
-    }
+.portfolio-card {
+    display: inline-block !important; 
+    width: 290px !important;       
+    flex-shrink: 0;                  
+    text-decoration: none;
+    padding: 12px;
+    opacity: 0;              
+    transform: translateY(20px); 
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
+
+.portfolio-card.is-visible {
+    opacity: 1;               
+    transform: translateY(0);
+}
+
+.image-wrapper {
+    position: relative;
+    width: 290px;  
+    height: 580px; 
+    overflow: hidden;
+    border-radius: 160px 160px 0 0;
+    background-color: #f0f0f0;       
+}
+
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+
+.card-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+
+.portfolio-card:hover {
+  transform: translateY(-10px); 
+}
+
+.portfolio-card:hover img {
+  filter: brightness(0.8); 
+}
+

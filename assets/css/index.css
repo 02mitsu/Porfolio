@@ -57,6 +57,24 @@ a:hover {
     background-color: #dac8a8;
 
 }
+
+.see-all-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-all-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #3d2b1f; /* Color oscuro de la foto */
+    color: #fdf6e3 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
 .hero-section {
     min-height: 105vh;
     margin-top: -24px;

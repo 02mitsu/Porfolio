@@ -1,0 +1,67 @@
+.coming-soon-section {
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px; 
+}
+
+.coming-soon-content h1 {
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.coming-soon-content p {
+    font-size: 1.2rem;
+    color: #6b4632;
+    margin-bottom: 40px;
+}
+
+
+.coming-soon-img {
+    width: 100%;           
+    max-width: 450px;      
+    height: auto;         
+
+    margin: 0 auto 40px auto; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    animation: levitate 4s ease-in-out infinite; 
+}
+
+.coming-soon-img img {
+    width: 100%;
+    height: auto;         
+    display: block;        
+    object-fit: contain;  
+}
+
+
+@media (max-width: 768px) {
+    .coming-soon-content h1 {
+        font-size: 2.5rem;
+    }
+    .coming-soon-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@keyframes levitate {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); } 
+    100% { transform: translateY(0); }
+}
+
+.coming-soon-img {
+    animation: levitate 4s ease-in-out infinite; 
+}
+
+.coming-soon-img:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 40px rgba(210, 124, 86, 0.4); 
+    transition: all 0.3s ease;
+}

@@ -109,3 +109,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const toggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.theme-icon.sun');
+    const moonIcon = document.querySelector('.theme-icon.moon');
+    const htmlElement = document.documentElement;
+
+  
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'ocean') {
+        htmlElement.setAttribute('data-theme', 'ocean');
+        updateIcons(true); 
+    }
+
+
+    function updateIcons(isOcean) {
+        if (isOcean) {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+
+  
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+      
+            if (htmlElement.getAttribute('data-theme') === 'ocean') {
+           
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'forest');
+                updateIcons(false);
+            } else {
+    
+                htmlElement.setAttribute('data-theme', 'ocean');
+                localStorage.setItem('theme', 'ocean');
+                updateIcons(true);
+            }
+        });
+    }
+});

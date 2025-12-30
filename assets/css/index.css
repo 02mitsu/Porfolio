@@ -114,9 +114,6 @@ html {
     }
 }
 
-
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -288,7 +285,7 @@ main {
 
 
 h2 {
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 5px;
     margin-top: 40px;
@@ -355,6 +352,7 @@ h2 {
     font-size: 0.9rem;
     padding: 0.5rem 0;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -381,6 +379,7 @@ h2 {
     
     width: 100%;
     text-align: right; 
+    white-space: nowrap;
     position: relative;
 }
 
@@ -458,176 +457,72 @@ html {
     display: none !important;
 }
 
-/* Por defecto (PC), mostramos la versión escritorio */
 .desktop-view {
-    display: block; /* o flex, según tu diseño original */
+    display: block;
 }
 
+@media (max-width: 1300px) {
 
-@media (max-width: 900px) {
-
-    /* --- 1. AJUSTES GENERALES Y NAV --- */
-    .container {
+    .container.nav-content {
+        padding-left: 10px !important;  
+        padding-right: 10px !important;
         width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 20px !important; /* Margen general */
-        overflow: visible !important;
+        justify-content: space-between !important; 
     }
 
-    section {
-        height: auto !important;
-        padding: 40px 0 !important;
-        overflow: visible !important;
+    .logo, 
+    .theme-btn {
+        flex-shrink: 0; 
+    }
+    
+    .logo {
+        font-size: 1rem !important; 
+        margin-right: 5px;
     }
 
-    /* BARRA DE NAVEGACIÓN (CON MARGENES) */
-    .nav-content {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        /* AQUÍ ESTÁ EL MARGEN QUE PEDÍAS */
-        padding: 15px 20px !important; 
-        width: 100% !important;
-        box-sizing: border-box !important;
+    .theme-btn {
+        transform: scale(0.8); 
+        margin-left: 5px !important;
     }
 
     .nav-links {
-        display: flex !important;
-        gap: 10px !important;
-        font-size: 0.7rem !important;
+        flex-shrink: 1; 
+        gap: 0.5rem !important; 
+        justify-content: center;
     }
 
-    /* --- 2. ARCOS DEL PORTFOLIO (SOLUCIÓN SUPERPOSICIÓN) --- */
-    .portfolio-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* 2 columnas */
-        gap: 15px !important;
+    .nav-links a {
+        font-size: clamp(0.6rem, 1.2vw, 0.9rem) !important; 
         
-        /* CLAVE: Altura automática para que quepan los 4 arcos */
-        height: auto !important; 
-        min-height: auto !important;
-        
-        /* CLAVE: Empujamos el título de "Illustrations" hacia abajo */
-        margin-bottom: 80px !important; 
-        
-        overflow: visible !important;
+        white-space: nowrap !important; 
+        letter-spacing: -0.5px; 
+        padding: 5px 2px !important; 
     }
+}
 
-    .portfolio-card {
-        height: 200px !important; /* Altura controlada de cada arco */
-        width: 100% !important;
-        margin: 0 !important;
-        position: relative !important;
+@media (max-width: 980px) and (min-width: 901px) {
+    .nav-links a {
+        font-size: 0.65rem !important; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
     }
+}
 
-    /* --- 3. ILUSTRACIONES (BENTO GRID ESCALADO - MISMA FORMA) --- */
-    
-    .illustrations-section .container {
-        display: flex !important;
-        flex-direction: column !important;
-        height: auto !important;
-        /* Aseguramos que el título tenga espacio arriba por si acaso */
-        padding-top: 20px !important; 
+.category-title,
+.illustration-section h2, 
+.about-text h2 {
+
+    white-space: nowrap !important;
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    width: 100%;
+    display: block;
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+}
+
+@media (max-width: 768px) {
+    .about-text h2 {
+        font-size: clamp(1rem, 4.5vw, 2.5rem) !important;
+        text-align: center; 
     }
-
-    /* Orden: Título(1) -> Grid(2) -> Botón(3) */
-    .illustrations-section h2 { order: 1 !important; margin-bottom: 20px !important; }
-    .vertical-marquee-container { order: 2 !important; }
-    .see-all-container { order: 3 !important; margin-top: 30px !important; }
-
-    /* Stop Animación */
-    .vertical-marquee-container, .vertical-marquee-track {
-        height: auto !important;
-        overflow: visible !important;
-        margin: 0 !important;
-        width: 100% !important;
-        display: block !important;
-        animation: none !important;
-    }
-
-    /* Ocultar duplicados */
-    .bento-grid:nth-of-type(n+2) { display: none !important; }
-
-    /* --- AQUÍ ESTÁ LA MAGIA DEL GRID ESCALADO --- */
-    .bento-grid {
-        display: grid !important;
-        /* MANTENEMOS LAS 3 COLUMNAS DEL ORDENADOR */
-        grid-template-columns: repeat(3, 1fr) !important; 
-        
-        /* Reducimos el hueco entre fotos para que quepa en móvil */
-        gap: 6px !important; 
-        
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    /* RESTAURAMOS LAS FORMAS (Wide, Tall, Circle) */
-    /* Importante: No reseteamos a span 1, forzamos que se mantengan */
-    
-    .grid-item {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        transform: none !important;
-    }
-    
-    /* ITEMS ANCHOS (Ocupan 2 columnas) */
-    .item-wide { 
-        grid-column: span 2 !important; 
-        aspect-ratio: 2 / 1 !important; 
-    }
-    
-    /* ITEMS ALTOS (Ocupan 2 filas) */
-    .item-tall { 
-        grid-row: span 2 !important; 
-        aspect-ratio: 1 / 2 !important; 
-    }
-
-    /* CIRCULOS Y CUADRADOS */
-    .item-circle, .item-square {
-        grid-column: span 1 !important;
-        aspect-ratio: 1 / 1 !important;
-    }
-
-    /* ÍTEMS MEDIANOS (Si tienes) */
-    .item-medium {
-        grid-column: span 1 !important;
-        aspect-ratio: 1 / 1 !important;
-    }
-
-    .grid-item img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        position: absolute !important;
-        top: 0; left: 0;
-    }
-
-
-    /* --- 4. ABOUT ME (Texto -> Botón -> Foto) --- */
-    .about-preview {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .about-text { order: 1 !important; margin-bottom: 30px !important; }
-    .about-image-wrapper { order: 2 !important; width: 100% !important; }
-
-
-    /* --- 5. COMING SOON --- */
-    .coming-soon-content img, .coming-soon-img {
-        width: 100% !important;
-        height: auto !important;
-        border: none !important;
-        border-radius: 10px !important;
-    }
-    .glass-box, .coming-soon-card { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important;}
-
-    /* --- 6. 404 PAGE --- */
-    .error-fullscreen-hero {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        padding: 20px !important;
-    }
-    .glass-error-box { margin: 0 auto !important; width: 90% !important; }
 }

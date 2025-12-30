@@ -530,11 +530,12 @@ html {
     
     .container, 
     .nav-content {
-        padding-left: 30px !important; 
-        padding-right: 30px !important; 
+        padding-left: 40px !important; 
+        padding-right: 40px !important; 
         width: 100% !important;
         box-sizing: border-box !important;
     }
+
 
     .nav-links a {
         font-size: 0.7rem !important; 
@@ -544,4 +545,21 @@ html {
     .logo {
         font-size: 1.1rem !important;
     }
+}
+
+.theme-icon.sun {
+    font-size: 1.6rem !important; 
+    line-height: 1;              
+}
+
+.theme-icon.moon {
+    font-size: 1.3rem !important;
+    line-height: 1;
+}
+
+.theme-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important; 
 }

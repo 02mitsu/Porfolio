@@ -68,7 +68,7 @@
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    color: #4a3427;
+    color: var(--text-main);
     line-height: 1.8; 
 }
 
@@ -93,8 +93,8 @@
 
 
 .skill-tag {
-    background-color: #4a3427;
-    color: #fff6e7;
+    background-color: var(--text-main);
+    color: var(--color-background);
     padding: 8px 20px;
     border-radius: 30px;
     font-weight: 600;
@@ -104,8 +104,8 @@
 }
 
 .skill-tag:hover {
-    background-color:  #dac8a8;
-    color:#fff6e7;
+    background-color: var(--accent-color);
+    color:var(--color-background);
     transform: translateY(-2px);
 }
 

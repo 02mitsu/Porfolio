@@ -1,15 +1,24 @@
 .error-fullscreen-hero {
-    min-height: 85vh; 
-    display: flex;
-    align-items: center; 
-    padding-top: 80px; 
-    padding-bottom: 40px;
-    
+   height: 100vh; 
+    width: 100%;
 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
     background-image: url('../../assets/images/flower.jpg'); 
     background-size: cover;
     background-position: center;
-    position: relative;
+
+    z-index: 1; 
 }
 
 .error-fullscreen-hero::before {
@@ -35,26 +44,27 @@
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     animation: fadeUp 1s ease-out;
+    z-index: 2;
 }
 
 .error-title-large {
     font-size: 7rem;
     line-height: 1;
-    color: var(--color-primary);
+    color: #422d21;
     margin-bottom: 10px;
     position: center;
 }
 
-.error-subtitle-serif {
+.error-subtitle {
     font-size: 2rem;
-    color: #6b4632;
+    color:#422d21;
     margin-bottom: 20px;
     font-style: italic;
 }
 
 .error-poetic-text {
     font-size: 1.1rem;
-    color: #4a3427;
+    color:#422d21;
     margin-bottom: 40px;
     line-height: 1.7;
 }
@@ -65,7 +75,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .glass-error-box {
         margin: 0 20px; 

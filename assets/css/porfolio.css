@@ -304,7 +304,6 @@
 
 .about-section {
     width: 100%;
-    background-color: #fff6e7; 
     padding-top: none;
 }
 
@@ -336,15 +335,15 @@
 .about-text p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #4a3427;
+    color:var(--text-main);
     margin-bottom: 20px;
 }
 
 .pill-btn {
     display: inline-block;
     padding: 12px 35px;
-    background-color: #3d2b1f; 
-    color: #fdf6e3 !important;
+    background-color:var(--text-main); 
+    color: var(--button-text) !important;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
@@ -357,7 +356,7 @@
 }
 
 .pill-btn:hover {
-    background-color: #dac8a8;
+    background-color: var(--accent-color);
 }
 
 .about-image {

@@ -7,7 +7,7 @@
 .page-title {
     text-align: center;
     font-size: 3rem;
-    color: var(--color-primary, #422d21); 
+    color: var(--color-primary,var(--text-main)); 
     margin-bottom: 60px;
 }
 

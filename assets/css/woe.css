@@ -62,7 +62,7 @@
 .project-description p {
     margin-bottom: 20px;
     font-size: 1.05rem;
-    color: #4a3427;
+    color: var(--text-main);
 }
 
 .back-btn {
@@ -199,7 +199,7 @@
 
 .close-lightbox:hover,
 .close-lightbox:focus {
-    color: #dac8a8; 
+    color:var(--accent-color); 
 }
 
 .project-gallery img, 

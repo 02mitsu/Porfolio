@@ -122,14 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const savedTheme = localStorage.getItem('theme');
     
-    if (savedTheme === 'ocean') {
-        htmlElement.setAttribute('data-theme', 'ocean');
+    if (savedTheme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
         updateIcons(true); 
     }
 
 
-    function updateIcons(isOcean) {
-        if (isOcean) {
+    function updateIcons(isDark) {
+        if (isDark) {
             sunIcon.style.display = 'none';
             moonIcon.style.display = 'block';
         } else {
@@ -142,15 +142,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
       
-            if (htmlElement.getAttribute('data-theme') === 'ocean') {
+            if (htmlElement.getAttribute('data-theme') === 'dark') {
            
                 htmlElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'forest');
                 updateIcons(false);
             } else {
     
-                htmlElement.setAttribute('data-theme', 'ocean');
-                localStorage.setItem('theme', 'ocean');
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
                 updateIcons(true);
             }
         });

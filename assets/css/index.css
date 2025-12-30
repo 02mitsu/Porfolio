@@ -526,3 +526,23 @@ html {
         text-align: center; 
     }
 }
+
+@media (max-width: 900px) {
+    
+    .container, 
+    .nav-content {
+        padding-left: 30px !important; 
+        padding-right: 30px !important; 
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem !important; 
+        letter-spacing: -0.5px;
+    }
+    
+    .logo {
+        font-size: 1.1rem !important;
+    }
+}

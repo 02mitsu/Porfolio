@@ -103,14 +103,12 @@ html {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--color-background);
-    transform: rotate(15deg);
 }
 
 
 @media (max-width: 768px) {
     .theme-btn {
-        margin-left: 0;
-        margin-top: 10px; 
+        margin-left: 0; 
     }
 }
 
@@ -529,13 +527,29 @@ html {
 @media (max-width: 900px) {
     
     .container, 
-    .nav-content {
-        padding-left: 40px !important; 
-        padding-right: 40px !important; 
-        width: 100% !important;
-        box-sizing: border-box !important;
+    .nav-content,
+    .about-container {
+     
+        width: auto !important; 
+        max-width: 100% !important;
+     
+        box-sizing: border-box !important; 
+        
+        padding-left: 30px !important; 
+        padding-right: 30px !important; 
+ 
+        overflow-x: hidden !important;
     }
 
+    .about-text h2 {
+
+        font-size: clamp(1.2rem, 4vw, 2.5rem) !important;
+    
+        width: 100% !important;
+        display: block !important;
+    
+        white-space: nowrap !important; 
+    }
 
     .nav-links a {
         font-size: 0.7rem !important; 
@@ -547,19 +561,3 @@ html {
     }
 }
 
-.theme-icon.sun {
-    font-size: 1.6rem !important; 
-    line-height: 1;              
-}
-
-.theme-icon.moon {
-    font-size: 1.3rem !important;
-    line-height: 1;
-}
-
-.theme-btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important; 
-}

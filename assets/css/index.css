@@ -565,3 +565,30 @@ html {
         width: 100% !important;
     }
 }
+
+@media (max-width: 900px) {
+    
+    .about-text h2 {
+        white-space: nowrap !important; 
+        
+        text-overflow: clip !important; 
+        overflow: visible !important;
+        
+        font-size: 2rem !important;   
+        line-height: 1.2 !important;
+        text-align: center !important; 
+        
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .about-text {
+        margin-bottom: 50px !important; 
+        padding-bottom: 10px !important;
+    }
+    
+    .about-image {
+        margin-top: 0 !important;
+        display: block !important;
+    }
+}

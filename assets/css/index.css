@@ -570,18 +570,15 @@ html {
     
     .about-text h2 {
         white-space: nowrap !important; 
-        
-        text-overflow: clip !important; 
-        overflow: visible !important;
-        
-        font-size: 2rem !important;   
-        line-height: 1.2 !important;
-        text-align: center !important; 
-        
+        font-size: clamp(0.7rem, 4.5vw, 2.2rem) !important;
         width: 100% !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        text-align: center !important;
+        display: block !important;
+
         margin-bottom: 20px !important;
     }
-
     .about-text {
         margin-bottom: 50px !important; 
         padding-bottom: 10px !important;

@@ -25,6 +25,7 @@ tags:
  - javascript
  - responsive-design
  - accessibility
+ - micro-interactions
 
 learning_focus:
  - semantic-html
